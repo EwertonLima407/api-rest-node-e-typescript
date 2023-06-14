@@ -1,34 +1,38 @@
+import { create } from './../../src/server/controllers/cidades/Create';
 import { StatusCodes } from "http-status-codes";
 import { testServer } from "../jest.setup";
 
 
 describe('Cidades - Get by id', () => {
 
-  it('Testa o get by id', async () => {
+  it('Busca registro por id', async () => {
     
     const resp = await testServer
-      .get('/cidades/:id')
-      .send({
-        id: 1
-      });
-      
-    expect(resp.statusCode).toEqual(StatusCodes.GONE);
-    expect(typeof resp).toEqual('number');
-    
-  });
-
- /*  it('Valida o tamanho do nome', async () => {
-
-    const reposta2 = await testServer
       .post('/cidades')
       .send({
-        nome: 'Ol'
+        nome: 'Recife'
       });
       
-    expect(reposta2.statusCode).toEqual(StatusCodes.CREATED);
-    expect(reposta2.body).toHaveProperty('errors.body.nome');
+    expect(resp.statusCode).toEqual(StatusCodes.CREATED);
+    
+    const resBuscada = await testServer
+      .get(`/cidades/${resp.body}`)
+      .send();
+    
+    expect(resBuscada.statusCode).toEqual(StatusCodes.OK);
+    expect(resBuscada.body).toHaveProperty('nome');
+  });
+
+   it('Tenta buscar registro que não existe', async () => {
+
+   const resp1 = await testServer
+      .get('/cidades/9999')
+      .send();
+      
+    expect(resp1.statusCode).toEqual(StatusCodes.INTERNAL_SERVER_ERROR);
+    expect(resp1.body).toHaveProperty('errors.default');
  
  
   });
-   */
+   
 });
