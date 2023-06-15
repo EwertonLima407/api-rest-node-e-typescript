@@ -9,7 +9,8 @@
     "start": "ts-node-dev ./src/index.ts",
     "test": "jest",
     "postinstall":"tsc",
-    "production":"node ./build/index.js"
+    "production":"node ./build/index.js",
+    "build:digitalocean": "yarn install --production=false && yarn run build && rm -rf node_modules && yarn install --production --frozen-lockfile"
   },
   "dependencies": {
     "@types/jest": "^29.5.2",
