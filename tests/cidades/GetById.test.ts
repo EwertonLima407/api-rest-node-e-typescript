@@ -1,4 +1,4 @@
-import { create } from './../../src/server/controllers/cidades/Create';
+
 import { StatusCodes } from "http-status-codes";
 import { testServer } from "../jest.setup";
 
