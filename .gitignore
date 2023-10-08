@@ -3,6 +3,7 @@ yarn-error.log
 
 /build
 /coverage
+/.vscode
 
 .env
 *.sqlite
