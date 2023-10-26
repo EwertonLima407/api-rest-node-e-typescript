@@ -48,7 +48,7 @@ export const signIn = async (req: Request<{}, {}, IBodyProps>, res: Response) =>
         }
       });
     }
-
-    return res.status(StatusCodes.OK).json({ accessToken });
+   
+    return res.status(StatusCodes.OK).json({ accessToken});
   }
 };

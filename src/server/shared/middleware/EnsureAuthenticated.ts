@@ -31,6 +31,7 @@ export const ensureAuthenticated: RequestHandler = async (req, res, next) => {
       errors: { default: 'Não autenticado' }
     });
   }
+  
 
   req.headers.idUsuario = jwtData.uid.toString();
 

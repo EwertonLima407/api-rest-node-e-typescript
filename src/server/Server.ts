@@ -18,9 +18,4 @@ server.use(express.json());
 server.use(router);
 
 
-interface Teste {
-  
-};
-
-
 export { server };

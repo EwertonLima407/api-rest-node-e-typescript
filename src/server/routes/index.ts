@@ -1,8 +1,6 @@
 import { Router } from "express";
-//import {StatusCodes } from 'http-status-codes';
 
-import {CidadesController, PessoasController} from './../controllers'
-import { UsuariosController } from "../controllers/usuarios";
+import {CidadesController, UsuariosController, PessoasController} from './../controllers'
 import { ensureAuthenticated } from "../shared/middleware";
 
 const router = Router();

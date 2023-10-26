@@ -8,8 +8,8 @@ const hashPassword = async (password: string) => {
 
 }
 
-const verifyPassword = async (password: string, hashPassword: string) => { 
-  return await compare(password, hashPassword)
+const verifyPassword = async (password: string, hashedPassword: string) => { 
+  return await compare(password, hashedPassword)
 }
 
 export const PasswordCrypto = {
